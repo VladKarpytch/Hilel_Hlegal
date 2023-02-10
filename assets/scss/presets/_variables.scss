@@ -1,0 +1,23 @@
+/* Подключение шрифтов в HTML
+ * <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700|Roboto:100,300,400,500,700,900" rel="stylesheet">
+ */
+
+$font-primary: 'Roboto', sans-serif;
+$font-header: 'Roboto Slab', serif;
+$font-icon: 'FontAwesome';
+$font-size: 16px;
+
+$ul: 1380px;
+$xl: 1200px;
+$lg: 992px;
+$md: 768px;
+$sm: 576px;
+$xs: 480px;
+$xx: 420px;
+$ux: 360px;
+
+$gap: 20px;
+$gap-sm: $gap * 0.5;
+$gap-md: $gap * 0.75;
+$gap-lg: $gap * 1.5;
+$gap-xl: $gap * 2;
