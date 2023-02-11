@@ -1,6 +1,5 @@
 $(document).ready(function () {
-    $('.header-navbar__btn').on('click', function () {
-        $(this).toggleClass('active');
-        $('.header-navbar__list').toggleClass('active');
+    $('.menu__btn').on('click', function () {
+        $(this).toggleClass('open');
     });
 });
