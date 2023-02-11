@@ -1,0 +1,36 @@
+@use "../../../presets" as *;
+
+.page-header{
+  position: relative;
+&__grid{
+  position: absolute;
+}
+&__logo{}
+&__menu{}
+&__actions{}
+&__content{
+  min-height: 100vh;
+  background-color: $color-primary;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-title{
+    margin: 0;
+    font-size: 38px;
+    text-align: center;
+
+    color: $color-white;
+    max-width: 800px;
+    padding: $gap;
+    position: absolute;
+  }
+
+  &-image{
+width: 872px;
+  }
+}
+&__button{
+  position: absolute;
+}
+}
