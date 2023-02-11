@@ -1,36 +1,60 @@
 @use "../../../presets" as *;
+@use "../../../mixins" as *;
 
-.page-header{
-  position: relative;
-&__grid{
-  position: absolute;
-}
-&__logo{}
-&__menu{}
-&__actions{}
-&__content{
-  min-height: 100vh;
-  background-color: $color-primary;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.page-header {
+    position: relative;
 
-  &-title{
-    margin: 0;
-    font-size: 38px;
-    text-align: center;
+    &__grid {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-areas: "logo actions" "logo menu";
+        gap: $gap;
+        padding-top: 50px;
 
-    color: $color-white;
-    max-width: 800px;
-    padding: $gap;
-    position: absolute;
-  }
+        @extend %container;
+    }
 
-  &-image{
-width: 872px;
-  }
-}
-&__button{
-  position: absolute;
-}
+    &__logo {
+        grid-area: logo;
+    }
+
+    &__menu {
+        grid-area: menu;
+    }
+
+    &__actions {
+        grid-area: actions;
+    }
+
+    &__content {
+        min-height: 100vh;
+        background-color: $color-primary;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &-title {
+            margin: 0;
+            font-size: 38px;
+            text-align: center;
+
+            color: $color-white;
+            max-width: 800px;
+            padding: $gap;
+            position: absolute;
+        }
+
+        &-image {
+            width: 872.35px;
+
+        }
+    }
+
+    &__button {
+        position: absolute;
+    }
 }

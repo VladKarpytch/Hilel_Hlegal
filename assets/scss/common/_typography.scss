@@ -1,19 +1,28 @@
 @use "../presets" as *;
+@use "../mixins" as *;
 
 *
 *::before
-*::after
-{
-  box-sizing: border-box;
+*::after {
+    box-sizing: border-box;
 }
-html{
-  font-family: $font-primary;
-  font-size: $font-size;
+
+html {
+    font-family: $font-primary;
+    font-size: $font-size;
 }
-body{
-  line-height: 1.2;
+
+body {
+    line-height: 1.2;
+    font-weight: $font-weight;
 }
-a{
-  text-decoration: none;
-  color: $color-active;
+
+a {
+    text-decoration: none;
+    color: $color-active;
+}
+
+ul {
+    @include unlist();
+    padding: 0;
 }
