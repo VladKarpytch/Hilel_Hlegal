@@ -1,0 +1,143 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+$size: 16px;
+
+.slider {
+    display: flex;
+    color: $color-white;
+    @include md-min {
+        gap: 80px;
+    }
+    @include md {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    &__headers {
+        position: relative;
+        flex-basis: 0;
+        flex-grow: 2;
+
+        display: flex;
+        flex-direction: column;
+        gap: $gap;
+
+        @include md-min {
+            &:after {
+                content: "";
+                position: absolute;
+                right: -42px;
+                top: 0;
+                width: 4px;
+                background-color: $color-gray-separator;
+            }
+        }
+    }
+
+    &__header {
+        position: relative;
+        user-select: none;
+        color: $color-gray-text;
+        font-weight: 700;
+
+        @include md-min {
+            text-align: right;
+            font-size: 42px;
+        }
+        @include md {
+            display: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        &.active {
+            span {
+                @extend %text-liner-gradient;
+            }
+
+            @include md-min {
+                &:after {
+                    content: "";
+                    position: absolute;
+                    right: -42px;
+                    top: 0;
+                    width: 4px;
+                    height: 100%;
+                    background-color: $color-accent;
+                    z-index: 1;
+                }
+            }
+            @include md {
+                display: block;
+            }
+        }
+    }
+
+    &__notes {
+        flex-basis: 0;
+        flex-grow: 3;
+
+        display: flex;
+        align-items: center;
+    }
+
+    &__note {
+        position: absolute;
+        z-index: -9999;
+        opacity: 0;
+        max-width: 600px;
+
+        &.active {
+            position: static;
+            z-index: inherit;
+            opacity: 1;
+        }
+
+        &-title {
+            margin-bottom: 15px;
+            font-weight: 500;
+            @include md-min {
+                font-size: 32px;
+            }
+            @include md {
+                font-size: 22px;
+            }
+        }
+
+        &-description {
+            line-height: 1.43;
+            @include md-min {
+                font-size: 21px;
+            }
+            @include md {
+                font-size: 18px;
+            }
+        }
+    }
+
+    &__indicators {
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        position: relative;
+        bottom: -74px;
+        @include md-min {
+            display: none;
+        }
+    }
+
+    &__indicator {
+        width: $size;
+        height: $size;
+        border-radius: $size * 0.5;
+        opacity: 0.2;
+        background-color: $color-active;
+
+
+        &.active {
+            opacity: 1;
+        }
+    }
+}
