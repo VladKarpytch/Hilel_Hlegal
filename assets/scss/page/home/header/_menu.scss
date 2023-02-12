@@ -2,13 +2,31 @@
 @use "../../../mixins" as *;
 
 .menu {
+
     &__list {
         display: flex;
         justify-content: flex-end;
         gap: $gap-md;
 
-        @include xs{
+        @include sm-min {
+            justify-content: flex-end;
+        }  @include sm {
+            justify-content: flex-start;
+        }
+        @include xs {
             display: none;
+
+            position: absolute;
+            top: -10%;
+            background-color: $color-black;
+            right: calc(-170px - 60px);
+            width: $mobile-menu-size;
+            height: 100vh;
+            padding: $gap;
+        }
+
+        &.active {
+            display: block;
         }
     }
 
@@ -20,6 +38,7 @@
         font-size: 16px;
         color: $color-white;
     }
+
     &__btn {
         width: 30px;
         height: 25px;
@@ -29,7 +48,7 @@
         transition: .5s ease-in-out;
         cursor: pointer;
 
-        @include sm-min{
+        @include xs-min {
             display: none;
         }
 
@@ -69,7 +88,7 @@
             }
         }
 
-        &.open span {
+        &.active span {
             &:nth-child(1),
             &:nth-child(6) {
                 transform: rotate(45deg);
@@ -109,7 +128,6 @@
                 left: calc(50% - 2.5px);
                 top: 14.5px;
             }
-
 
 
         }

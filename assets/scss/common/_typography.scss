@@ -15,6 +15,24 @@ html {
 body {
     line-height: 1.2;
     font-weight: $font-weight;
+
+    &.active {
+        transform: translateX(-$mobile-menu-size);
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+
+        &::before {
+            background-color: rgba($color-black, 0.75%);
+            content: "";
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+        }
+    }
 }
 
 a {

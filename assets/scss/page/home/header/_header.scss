@@ -1,22 +1,29 @@
 @use "../../../presets" as *;
 @use "../../../mixins" as *;
 
+.logo {
+
+}
+
 .page-header {
     position: relative;
 
     &__grid {
+        z-index: 2;
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         display: grid;
         grid-template-columns: auto 1fr;
-        grid-template-areas: "logo actions" "logo menu";
         gap: $gap;
         padding-top: 50px;
 
-        @include xs-min {
-            grid-template-areas: "actions actions" "logo menu";
+        @include sm-min {
+            grid-template-areas: "logo actions" "logo menu";
+        }
+        @include sm {
+            grid-template-areas: "actions actions" "logo logo" "menu menu";
             padding-top: 50px;
         }
         @include xs {
@@ -28,6 +35,9 @@
 
     &__logo {
         grid-area: logo;
+        @include xs {
+            padding-top: 15px;
+        }
     }
 
     &__menu {
@@ -37,11 +47,13 @@
     &__actions {
         grid-area: actions;
         @include xs {
-            max-width: 576px;
-            min-height: 45px;
             justify-content: space-between;
             background-color: rgba(245, 245, 250, 0.2);
-            order: 1;
+            position: absolute;
+            top: -20px;
+            left: -4%;
+            height: 40px;
+            width: 108%;
         }
     }
 
@@ -51,21 +63,42 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        overflow: hidden;
 
         &-title {
             margin: 0;
             font-size: 38px;
             text-align: center;
-
+            z-index: 2;
             color: $color-white;
             max-width: 800px;
             padding: $gap;
             position: absolute;
+            @include xs {
+                width: 315px;
+            }
         }
 
         &-image {
-            width: 872.35px;
+            width: 872px;
+            object-fit: cover;
 
+
+
+            @include lg {
+                width: 697px;
+            }
+            @include md {
+                width: 669px;
+                overflow: hidden;
+
+            }
+            @include sm {
+                min-width: 893px;
+            }
+            @include xs {
+                max-width: 523px;
+            }
         }
     }
 

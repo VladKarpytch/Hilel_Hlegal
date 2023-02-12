@@ -7,9 +7,19 @@
     gap: $gap;
     align-items: center;
 
+    @include sm{
+        justify-content: flex-start;
+    }
+    @include md{
+        justify-content: flex-end;
+    }
+
     &__languages {
         display: flex;
         align-items: center;
+        @include xs {
+            padding-left: 20px;
+        }
 
         &-link {
             letter-spacing: 1px;
@@ -38,6 +48,9 @@
     }
 
     &__phones {
+        @include xs {
+            padding-right: 20px;
+        }
 
         &-link {
             color: $color-white;
