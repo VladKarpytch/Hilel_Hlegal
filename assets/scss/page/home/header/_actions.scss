@@ -37,7 +37,7 @@
     }
 
     &__locations {
-        @include sm {
+        @include sm{
             display: none;
         }
 
