@@ -303,9 +303,6 @@ ul {
 }
 .page-header__content-image {
   width: 872px;
-
-  -o-object-fit: cover;
-     object-fit: cover;
 }
 .page-header__button {
   position: absolute;
@@ -478,6 +475,9 @@ ul {
   .page-header__grid {
     grid-template-areas: "logo actions" "logo menu";
   }
+  .page-header__content-image {
+    min-width: 893px;
+  }
   .menu__list {
     -webkit-box-pack: end;
     -ms-flex-pack: end;
@@ -507,9 +507,6 @@ ul {
 
     grid-template-areas: "actions actions" "logo logo" "menu menu";
   }
-  .page-header__content-image {
-    min-width: 893px;
-  }
   .menu__list {
     -webkit-box-pack: start;
     -ms-flex-pack: start;
@@ -536,13 +533,13 @@ ul {
   .page-header__actions {
     position: absolute;
     top: -20px;
-    left: -4%;
+    left: -7%;
 
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
 
-    width: 108%;
+    width: 114%;
     height: 40px;
 
     background-color: rgba(245, 245, 250, 0.2);
@@ -551,6 +548,8 @@ ul {
     width: 315px;
   }
   .page-header__content-image {
+    overflow: hidden;
+
     max-width: 523px;
   }
   .menu__list {
