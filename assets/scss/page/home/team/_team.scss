@@ -1,0 +1,55 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.team {
+    padding-top: 74px;
+    &__container {
+        @extend %container;
+    }
+
+    &__item {
+        background-color: #F5F5FA;;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-areas: "image txt";
+
+        &-image {
+            grid-area: image;
+        }
+        &-png{
+            width: 400px;
+            height: 344px;
+        }
+
+       &-information{
+       grid-area: txt;
+       }
+        &-title{
+            font-size: 14px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: $color-active;
+            padding-top: 26px;
+            padding-bottom:  2px;
+        }
+        &-description{
+            font-size: 38px;
+            background: $bg-gradien-text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            padding-bottom: 21px;
+        }
+        &-name{
+            font-size: 16px;
+            color: $color-gray-text;
+            padding-bottom: 5px;
+        }
+        &-position{
+            font-size: 14px;
+            line-height: 22px;
+            color: $color-gray-text;
+        }
+    }
+}

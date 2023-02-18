@@ -126,6 +126,12 @@ $size: 16px;
         @include md-min {
             display: none;
         }
+        @include md{
+           bottom: 0px;
+        }
+        @include xs{
+            bottom: -74px;
+        }
     }
 
     &__indicator {

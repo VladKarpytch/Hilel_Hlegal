@@ -1,0 +1,102 @@
+@use "../../../presets" as *;
+@use "../../../mixins" as *;
+
+.services {
+
+    &__title {
+        background: $bg-gradien-text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        padding-top: 10px;
+        padding-bottom: 60px;
+
+    }
+
+    &__page {
+        &-link {
+            font-size: 14px;
+            letter-spacing: 1px;
+
+
+            &:hover {
+                color: $color-accent;
+            }
+
+        }
+
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: "block block block" "block block block";
+        gap: 30px;
+
+        @include sm {
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: "block block" "block block" "block block";
+        }
+        @include xs {
+            grid-template-columns: 1fr;
+            grid-template-areas: "block" "block" "block" "block" "block" "block";
+        }
+
+    }
+
+    &:after {
+        position: absolute;
+        content: "";
+        background-color: #CACADB;
+        border-radius: 0 0 12px 12px;
+        right: 20px;
+        left: 20px;
+        height: 10px;
+
+    }
+
+    &__container {
+        @extend %container;
+
+        &:after {
+            content: "";
+            position: absolute;
+            background-color: #E7E7F2;
+            border-radius: 0 0 12px 12px;
+            right: 40px;
+            left: 40px;
+            height: 20px;
+        }
+    }
+}
+
+.service {
+
+    &-item {
+        gap: 20px;
+
+        &__title {
+            padding-top: 30px;
+            font-size: 22px;
+            line-height: 1.2;
+            color: $color-active;
+            padding-bottom: 15px;
+        }
+
+        &__description {
+            height: 104px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.6;
+            color: $color-white;
+            padding-bottom: 60px;
+        }
+    }
+}
+
+.bg {
+    background: $bg-gradien-supersoft;
+    border-radius: 0px 0px 12px 12px;
+}
